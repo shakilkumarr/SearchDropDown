@@ -9,7 +9,7 @@ let compiler = webpack(config);
 var app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(wdm(compiler, {publicPath: config.output.publicPath}))
+app.use(wdm(compiler, {publicPath: config.output.publicPath, logLevel : "info"}))
 
 app.use(express.static('bin'))
 

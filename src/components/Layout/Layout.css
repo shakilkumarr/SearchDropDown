@@ -1,0 +1,21 @@
+.container{
+  background: linear-gradient(to bottom right, #C1EE9D 0%,#528f92 80%);
+  min-height: 100%;
+  padding: 8rem;
+  font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+}
+.box-modal-container{
+  margin: 0 auto;
+  text-align: center;
+  padding : 2rem 0;
+  position: relative;
+  width: 75%;
+}
+.box-modal{
+  box-shadow: 10px -10px 0 rgba(0, 0, 0, 0.08);
+  display: inline-flex;
+}
+.box-container{
+  min-width: 350px;
+  background-color: #198eb8;
+}
