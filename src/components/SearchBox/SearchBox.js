@@ -19,6 +19,29 @@ class SearchBox extends React.Component{
     this.handleClick = this.handleClick.bind(this);
     this.handleListSelEv = this.handleListSelEv.bind(this);
     this.toggleInputView = this.toggleInputView.bind(this);
+    this.handleDocMouseEv = this.handleDocMouseEv.bind(this);
+    this.handleDocKeyEv = this.handleDocKeyEv.bind(this);
+  }
+  componentWillMount(){
+      document.addEventListener("mousedown",this.handleDocMouseEv,false);
+      document.addEventListener("keyup",this.handleDocKeyEv,false);
+  }
+  componentWillUnMount(){
+      document.removeEventListener("mousedown",this.handleDocMouseEv,false);
+      document.removeEventListener("keyup",this.handleDocKeyEv,false);
+  }
+  handleDocMouseEv(ev){
+    if(!this.refEl.contains(ev.target)){
+      this.toggleInputView("hide");
+    }
+  }
+  handleDocKeyEv(ev){
+    if(ev.keyCode === 13){
+      this.toggleInputView("show");
+    }
+    else if(ev.keyCode === 27){
+      this.toggleInputView("hide");
+    }
   }
   handleTextInput(event){
     let value = event.target.value;
@@ -47,13 +70,14 @@ class SearchBox extends React.Component{
         result.showList = false;
       }
       return result;
-    })
+    });
   }
   handleListSelEv(val){
     this.setState((state)=>{
       let result = Object.assign({},state);
       result.textValue = val;
       result.showList = false;
+      result.dataArr = filterData(state.dataArr,val);
       return result;
     });
   }
@@ -66,7 +90,7 @@ class SearchBox extends React.Component{
   }
   render(){
     return (
-      <div>
+      <div ref={refEl=>this.refEl = refEl}>
         <div className={style.container+" "+style["container_"+this.state.containerVisiblity]}>
           <img className={style["search-img"]} src="images/search.png" onClick={()=>{this.toggleInputView("show")}} />
           <TextInput inputValue={this.state.textValue} onChangeEv={this.handleTextInput} handleClick={this.handleClick} />
