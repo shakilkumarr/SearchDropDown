@@ -1,0 +1,55 @@
+.container{
+  margin-top: 30%;
+  margin-left: 12%;
+  display: flex;
+  background-color: rgba(255, 255, 255,0.12);
+  border-radius: 50px;
+  opacity: 0.8;
+  padding: 10px;
+  -webkit-transition: width 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  -moz-transition: width 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  -o-transition: width 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+.container_show{
+  opacity: 1;
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.33);
+  width: 22%;
+  border-radius: 25px;
+}
+.container:hover {
+  opacity: 1;
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.33);
+}
+.search-img{
+  top: 2px;
+  left: 1px;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.container_show .search-img{
+  opacity: 0.5;
+  margin: 2px 10px 0 10px;
+}
+.close-icon:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+.close-icon{
+  margin: 2px 10px 0 10px;
+  opacity: 0.3;
+  width: 15px;
+  height: 17px;
+  top: 2px;
+  position: relative;
+}
+.container_show input,.container_show .close-icon{
+  display: block;
+}
+.container_hide .close-icon{
+  display: none;
+}

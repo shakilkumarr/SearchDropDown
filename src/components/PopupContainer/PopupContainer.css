@@ -1,0 +1,27 @@
+.list-container{
+  max-height: 360px;
+  overflow-y: auto;
+  border-radius: 25px;
+  width: 23%;
+  margin-left: 12%;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+.list-container-show{
+  display: block;
+}
+.list-container-hide{
+  display: none;
+}
+.list-cust{
+  height: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 20px;
+  color: rgba(255, 255, 255);
+  padding: 10px 0 0 50px;
+  font-weight: 100;
+  cursor: pointer;
+}
+.list-cust:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+}

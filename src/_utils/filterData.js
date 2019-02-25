@@ -9,3 +9,5 @@ var filterData = (dataObj, text) => {
   }
   return [];
 }
+
+export default filterData;

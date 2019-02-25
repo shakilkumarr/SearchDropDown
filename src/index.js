@@ -1,9 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import Layout from "./components/Layout/Layout"
+import SearchBox from "./components/SearchBox/SearchBox"
 
 
 ReactDOM.render(
-  <Layout></Layout>,
+  <SearchBox />,
   document.getElementById("root")
 );
